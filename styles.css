@@ -119,7 +119,6 @@ footer {
 }
 
 /* NOTE: LINKS */
-
 .share-options ul {
   display: flex;
   flex-direction: row;
@@ -161,7 +160,7 @@ footer {
   height: 4.75rem;
   background-color: hsl(var(--clr-gray-900));
   color: hsl(var(--clr-gray-400));
-  padding: 1.125rem 2.375rem;
+  padding: 1.125rem 2rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -181,6 +180,9 @@ footer {
 
 .share-button {
   display: grid;
+  position: absolute;
+  right: 30px;
+  bottom: 22px;
   place-content: center;
   height: 2rem;
   width: 2rem;
@@ -188,7 +190,7 @@ footer {
   border-radius: 100px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  /* z-index: 100; */
+  z-index: 2000;
 }
 
 /* TOGGLE STATE */
@@ -205,6 +207,11 @@ footer {
   visibility: visible;
   pointer-events: none;
 }
+
+/* .share-button.active ~ .share-button {
+  position: absolute;
+  z-index: 2000;
+} */
 
 /* IMPORTANT: MEDIA QUERIES */
 @media (min-width: 48em) {
@@ -234,7 +241,7 @@ footer {
   }
 
   .share-options {
-    transform: translate(-45%, -115%);
+    transform: translate(-58%, -115%);
     transform-origin: top left;
     min-width: max-content;
     height: auto;
@@ -258,6 +265,12 @@ footer {
     border-width: 10px;
     border-style: solid;
     border-color: hsl(var(--clr-gray-900)) transparent transparent transparent;
+  }
+
+  .share-button {
+    position: absolute;
+    right: 0;
+    bottom: 4px;
   }
 }
 
