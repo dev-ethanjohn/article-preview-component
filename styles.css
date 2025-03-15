@@ -88,7 +88,7 @@ main {
 
 article {
   background-color: hsl(var(--clr-white));
-  margin-inline: clamp(24px, 7vw, 120px);
+  margin-inline: clamp(24px, 10vw, 120px);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -169,6 +169,7 @@ button {
   }
   article {
     display: flex;
+    margin-inline: clamp(80px, 12vw, 120px);
   }
 
   .article-container {
@@ -183,6 +184,7 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: left;
   }
 
   .cta-container nav {
