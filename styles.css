@@ -90,6 +90,7 @@ article {
   background-color: hsl(var(--clr-white));
   margin-inline: clamp(24px, 10vw, 120px);
   border-radius: 10px;
+  box-shadow: 0 40px 40px -10px #c9d5e180;
 }
 
 .main-content {
@@ -109,6 +110,7 @@ article {
   height: 12.5rem;
   object-fit: cover;
   object-position: top;
+  border-radius: 10px 10px 0 0;
 }
 
 footer {
@@ -168,7 +170,7 @@ footer {
   visibility: hidden;
   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
   pointer-events: none;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
 }
 
 .share-options ul {
@@ -224,6 +226,7 @@ footer {
     height: 100%;
     object-fit: cover;
     object-position: left;
+    border-radius: 10px 0 0 10px;
   }
 
   .share {
@@ -238,12 +241,14 @@ footer {
     box-shadow: 0 10px 10px 0 #c9d5e180;
     scale: 0;
     transition: all 0.25s ease;
+    border-radius: 10px;
   }
 
   .share-button.active ~ .share-options {
     scale: 1;
   }
 
+  /* popover pointer */
   .share-options::before {
     content: "";
     position: absolute;
