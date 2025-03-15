@@ -169,7 +169,8 @@ button {
   }
   article {
     display: flex;
-    margin-inline: clamp(80px, 12vw, 120px);
+    /* margin-inline: clamp(80px, 12vw, 120px); */
+    width: max(50%, 38rem);
   }
 
   .article-container {
@@ -177,7 +178,7 @@ button {
   }
 
   .article-img {
-    min-width: 229px;
+    min-width: 14.3125rem;
   }
 
   .article-img img {
@@ -210,5 +211,11 @@ button {
     color: hsl(var(--clr-gray-900));
     letter-spacing: 0.0012em;
     font-weight: bold;
+  }
+}
+
+@media (min-width: 90em) {
+  article {
+    max-width: 45.625rem;
   }
 }
