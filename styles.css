@@ -90,7 +90,6 @@ article {
   background-color: hsl(var(--clr-white));
   margin-inline: clamp(24px, 10vw, 120px);
   border-radius: 10px;
-  overflow: hidden;
 }
 
 .main-content {
@@ -110,6 +109,11 @@ article {
   height: 12.5rem;
   object-fit: cover;
   object-position: top;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* NOTE: LINKS */
@@ -155,7 +159,7 @@ article {
   height: 4.75rem;
   background-color: hsl(var(--clr-gray-900));
   color: hsl(var(--clr-gray-400));
-  padding: 1rem 1.875rem;
+  padding: 1.125rem 2.375rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -164,6 +168,7 @@ article {
   visibility: hidden;
   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
   pointer-events: none;
+  border-radius: 10px;
 }
 
 .share-options ul {
@@ -173,9 +178,6 @@ article {
 }
 
 .share-button {
-  position: absolute;
-  right: 30px;
-  bottom: 22px;
   display: grid;
   place-content: center;
   height: 2rem;
@@ -184,7 +186,7 @@ article {
   border-radius: 100px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  z-index: 100;
+  /* z-index: 100; */
 }
 
 /* TOGGLE STATE */
@@ -194,12 +196,6 @@ article {
 
 .share-button.active img {
   filter: invert(1) brightness(1000%);
-}
-
-.share-button.active ~ .author {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
 }
 
 .share-button.active ~ .share-options {
@@ -228,6 +224,35 @@ article {
     height: 100%;
     object-fit: cover;
     object-position: left;
+  }
+
+  .share {
+    position: relative;
+  }
+
+  .share-options {
+    transform: translate(-45%, -115%);
+    transform-origin: top left;
+    min-width: max-content;
+    height: auto;
+    box-shadow: 0 10px 10px 0 #c9d5e180;
+    scale: 0;
+    transition: all 0.25s ease;
+  }
+
+  .share-button.active ~ .share-options {
+    scale: 1;
+  }
+
+  .share-options::before {
+    content: "";
+    position: absolute;
+    top: 99%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: hsl(var(--clr-gray-900)) transparent transparent transparent;
   }
 }
 
