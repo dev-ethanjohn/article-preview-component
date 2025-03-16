@@ -191,7 +191,7 @@ footer {
   border-radius: 100px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  z-index: 2000;
+  z-index: 2;
 }
 
 /* TOGGLE STATE */
@@ -207,12 +207,8 @@ footer {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  z-index: 1;
 }
-
-/* .share-button.active ~ .share-button {
-  position: absolute;
-  z-index: 2000;
-} */
 
 /* IMPORTANT: MEDIA QUERIES */
 @media (min-width: 48em) {
